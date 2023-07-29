@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Login_screen.dart';
+import 'package:omarahmed_flutter/massenger_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // build is the maneger of the screen, such main maneger of the hole app
-    return  MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  Login_Screen()
+      home: Massenger_Screen(),
 
     );
   }
 }
+
