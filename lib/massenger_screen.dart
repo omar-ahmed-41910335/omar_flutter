@@ -53,7 +53,7 @@ class Massenger_Screen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Expanded(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -78,6 +78,7 @@ class Massenger_Screen extends StatelessWidget {
                Container(
                  height: 100,// choose height based on pic and texe on contain
                  child: ListView.separated(
+                   shrinkWrap: true,
                    scrollDirection : Axis.horizontal,
                    itemBuilder:(context,index) => Buildstory(),
                    separatorBuilder: (context, index) => SizedBox(width: 20.0,),
@@ -85,12 +86,12 @@ class Massenger_Screen extends StatelessWidget {
                  ),
                ),
             SizedBox(height: 20,),
-            Expanded(
-              child: ListView.separated(
-                itemBuilder: (context,index) => Bulidchat(),
-                  separatorBuilder:(context,index) => SizedBox(height: 20,),
-                  itemCount: 6,
-              ),
+            ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context,index) => Bulidchat(),
+                separatorBuilder:(context,index) => SizedBox(height: 20,),
+                itemCount: 10,
             )
               // SizedBox(height: 15,),
             ],
